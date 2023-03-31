@@ -5,11 +5,12 @@
 // getAllClientNames(bankAccounts) => ['Kevin', 'Spenser']
 
 export function getAllClientNames(array) {
-  // Your code goes here...
-
+  let arr = [];
+  for (const client in array) {
+    arr.push(array[client].name);
+  }
+  return arr;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"

@@ -6,9 +6,19 @@
 
 export function getAllDepositsGreaterThanOneHundred(array) {
   // Your code goes here...
-
+  let deposits = [];
+  let depositsGreaterThan100 = [];
+  for(let i = 0; i < array.length; i++) {
+    if(array[i].deposits) {
+      deposits = array[i].deposits;
+      for(let x = 0; x < deposits.length; x++) {
+        if(deposits[x] > 100)
+          depositsGreaterThan100.push(deposits[x]);
+      }
+    }
+  }
+  return depositsGreaterThan100;
 }
-
 
 
 // === TEST YOURSELF ===

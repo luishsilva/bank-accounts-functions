@@ -5,9 +5,9 @@
 
 export function getClientWithNoMoney(array) {
   let arr = [];
-  for (const client in array) {
-    if(array[client].balance === 0) {
-      arr.push(array[client].name);
+  for (const client of array) {
+    if(client.balance === 0) {
+      arr.push(client.name);
     }
   }
   return arr;

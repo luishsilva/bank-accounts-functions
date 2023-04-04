@@ -7,11 +7,9 @@
 export function getClientWithLeastPositiveBalance(array) {
   let leastBalance = array[0]; // start with the first array value
   let clientWithLeastPositiveBalance = [];
-  for(let i = 0; i < array.length; i++) {
-    if(array[i].balance > 0){
-      if(array[i].balance < leastBalance.balance){
-        clientWithLeastPositiveBalance.push(array[i]);
-      }
+  for (let account of array) {
+    if (account.balance > 0 && account.balance < leastBalance.balance) {
+      clientWithLeastPositiveBalance.push(account);
     }
   }  
   return clientWithLeastPositiveBalance.balance < 0 ? [] : clientWithLeastPositiveBalance;

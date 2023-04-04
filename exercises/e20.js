@@ -9,15 +9,28 @@ export function separateNamesWithAFromRest(array) {
   // Your code goes here...
   let namesWithA = [];
   let namesWithoutA = [];
-  for(let i = 0; i < array.length; i++) {
-    if(array[i].indexOf('a') >= 0) {
-      namesWithA.push(array[i]);
-    }else{
-      namesWithoutA.push(array[i]);
+
+  for (let i = 0; i < array.length; i++) {
+    let arrName = array[i];
+    let foundNameWithA = false;
+
+    for (let x = 0; x < arrName.length; x++) {
+      if (arrName[x].toLowerCase() === 'a') {
+        foundNameWithA = true;
+        break
+      }
+    }
+
+    if (foundNameWithA) {
+      namesWithA.push(arrName);
+    } else {
+      namesWithoutA.push(arrName);
     }
   }
-  return [namesWithA,namesWithoutA];
-}
+  
+  return [namesWithA, namesWithoutA];
+  }
+
 
 
 // === TEST YOURSELF ===

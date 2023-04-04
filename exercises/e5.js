@@ -6,8 +6,8 @@
 
 export function getAllClientNames(array) {
   let arr = [];
-  for (const client in array) {
-    arr.push(array[client].name);
+  for (const client of array) {
+    arr.push(client.name);
   }
   return arr;
 }
